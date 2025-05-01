@@ -4,6 +4,8 @@ from drf_yasg.views import get_schema_view
 from rest_framework import permissions
 from rest_framework.routers import DefaultRouter
 from auto.views import *
+from .sitemap import SitemapView
+
 
 
 schema_view = get_schema_view(
@@ -27,5 +29,6 @@ urlpatterns = [
     path('purchase/', PurchaseRequisitionView.as_view()),
     path('contact/', ContactAPIView.as_view()),
 
+    path("sitemap.xml", SitemapView.as_view()),
     path('NavisAuto/', schema_view.with_ui('swagger', cache_timeout=0)),
 ]

@@ -31,7 +31,6 @@ class PurchaseRequisitionView(generics.ListCreateAPIView):
         serializer = self.get_serializer(data=request.data)
         if serializer.is_valid():
             purchase = serializer.save()
-
             try:
                 message = (
                     f"💬 *Новая заявка от клиента!*\n\n"
